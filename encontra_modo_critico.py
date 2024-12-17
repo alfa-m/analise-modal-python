@@ -18,7 +18,7 @@ for matriz in matrizes_diagonais:
     valores_maximos = matriz_atual_real.max()
     valores_maximos.to_csv("./valores_maximos_{}".format(matriz))
     modo_critico = valores_maximos.max()
-    indice_modo_critico = [i for i, x in enumerate(valores_maximos) if x == modo_critico][0]
+    indice_modo_critico = [i for i, x in enumerate(valores_maximos) if x == modo_critico]
     no_modo_critico = lista_de_nos_numpy[indice_modo_critico]
     modos_criticos.loc[matriz] = no_modo_critico, modo_critico
 
