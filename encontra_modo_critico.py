@@ -16,6 +16,7 @@ for matriz in matrizes_diagonais:
     matriz_atual_real = matriz_atual_complexa.abs()
     matriz_atual_real.to_csv("./magnitude_{}".format(matriz))
     valores_maximos = matriz_atual_real.max()
+    valores_maximos.to_csv("./valores_maximos_{}".format(matriz))
     modo_critico = valores_maximos.max()
     indice_modo_critico = [i for i, x in enumerate(valores_maximos) if x == modo_critico][0]
     no_modo_critico = lista_de_nos_numpy[indice_modo_critico]
