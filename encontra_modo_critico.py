@@ -17,9 +17,12 @@ for matriz in matrizes_diagonais:
     matriz_atual_real.to_csv("./magnitude_{}".format(matriz))
     valores_maximos = matriz_atual_real.max()
     valores_maximos.to_csv("./valores_maximos_{}".format(matriz))
+    valores_maximos_ordenados = valores_maximos.sort_values(ascending=False)
+    valores_maximos_ordenados.to_csv("./valores_maximos_ordenados_{}".format(matriz))
     modo_critico = valores_maximos.max()
     indice_modo_critico = [i for i, x in enumerate(valores_maximos) if x == modo_critico]
     no_modo_critico = lista_de_nos_numpy[indice_modo_critico]
     modos_criticos.loc[matriz] = no_modo_critico, modo_critico
 
 modos_criticos.to_csv('./modos_criticos.csv')
+print("Modos críticos encontrados e salvos no arquivo 'modos_criticos.csv'")
